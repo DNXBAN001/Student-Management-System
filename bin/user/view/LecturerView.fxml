@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="706.0" prefWidth="785.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="user.view.UserViewController">
+   <children>
+      <GridPane layoutX="2.0" layoutY="6.0" prefHeight="690.0" prefWidth="772.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="391.0" minWidth="10.0" prefWidth="319.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="462.0" minWidth="10.0" prefWidth="454.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="321.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="577.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="582.0" minHeight="10.0" prefHeight="582.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <GridPane GridPane.rowIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="signOutButton" mnemonicParsing="false" onAction="#backToMain" prefHeight="31.0" prefWidth="68.0" text="Sign Out" GridPane.columnIndex="1" />
+                  <Button fx:id="uploadFileButton" mnemonicParsing="false" onAction="#uploadFiles" prefHeight="31.0" prefWidth="99.0" text="Upload Files" />
+               </children>
+            </GridPane>
+            <Label prefHeight="31.0" prefWidth="169.0" text="Student Marks" textFill="#d00c0c">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Label>
+            <TableView fx:id="marksTable" prefHeight="433.0" prefWidth="387.0" GridPane.rowIndex="2">
+               <columns>
+                  <TableColumn fx:id="studentNumber" prefWidth="128.0" text="Student Number" />
+                  <TableColumn fx:id="subjectCode" prefWidth="111.0" text="Subject Code" />
+                  <TableColumn fx:id="mark" text="Mark(%)" />
+               </columns>
+            </TableView>
+            <VBox prefHeight="525.0" prefWidth="449.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <LineChart prefHeight="368.0" prefWidth="454.0">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </LineChart>
+                  <PieChart prefHeight="248.0" prefWidth="454.0" />
+               </children>
+            </VBox>
+            <Label prefHeight="36.0" prefWidth="346.0" text="                    Marks per Student" textFill="#0b26bc" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
